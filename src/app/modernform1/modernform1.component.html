@@ -1,0 +1,93 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Modern Form</h2>
+
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="fname">Name:</label>
+<input type="text" id="fname" value="" class="form-control" formControlName="fname">
+
+    <div *ngIf="userForm.controls['fname'].hasError('required')" class="alert alert-danger">
+        Please enter your name
+    </div>
+    <div *ngIf="userForm.controls['fname'].hasError('minlength')" class="alert alert-danger">
+        Plese enter atlease 4 character name
+    </div>
+    <div *ngIf="userForm.controls['fname'].hasError('maxlength')" class="alert alert-danger">
+        Name should not exceed 15 characters
+    </div>
+
+</div>
+        <div class="form-group">
+        <label for="email">Email:</label>
+<input type="email" id="email" value=""
+class="form-control" formControlName="email" required>
+    <div *ngIf="userForm.controls['email'].hasError('required')" class="alert alert-danger">
+        Please enter your Email Id
+    </div>
+    <div *ngIf="userForm.controls['email'].hasError('pattern')" class="alert alert-danger">
+        Please enter Correct Email Id
+    </div>
+</div>
+
+  <div formGroupName="address">  
+        <div class="form-group">
+            <label for="street">Street:</label>
+<input type="text" id="street" value="" class="form-control" formControlName="street">
+        </div>
+        <div class="form-group">
+            <label for="city">City:</label>
+<select formControlName="city" class="form-control">
+    <option value="" selected disabled>Select City</option>
+    <option [value]="c" *ngFor="let c of city">{{c}}</option>
+</select>
+<div *ngIf="userForm.get('address').get('city').hasError('required')" class="alert alert-danger">
+    Please Select your city
+</div>
+
+        </div>
+        <div class="form-group">
+<label for="zip">Zip Code:</label>
+<input type="text" id="zip" value="" class="form-control" 
+formControlName="zip" required >
+<div *ngIf="userForm.get('address').get('zip').hasError('required')" class="alert alert-danger">
+    Please enter your area zip code
+</div>
+<div *ngIf="userForm.get('address').get('zip').hasError('pattern')" class="alert alert-danger">
+    Please enter correct 6 digit zip code
+</div>
+
+</div>
+    </div>
+
+    <input type="submit" value="Submit" [disabled]="userForm.invalid" class="btn btn-primary">
+    </form>
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>Fullname</th>
+        <th>Emailid</th>
+        <th>Street</th>
+        <th>City</th>
+        <th>Zip code</th>
+        <th>Delete</th>
+        
+    </tr>
+    <tr *ngFor="let d of data">
+        <td>{{d.fname}}</td>
+        <td>{{d.email}}</td>
+        <td>{{d.address.street}}</td>
+        <td>{{d.address.city}}</td>
+        <td>{{d.address.zip}}</td>
+        
+        <td>
+            <button type="button" (click)="update(info)" class="btn btn-info">Update</button>
+        </td>
+        
+        <td>
+            <button type="button" (click)="delete(d)" class="btn btn-danger">Delete</button>
+        </td>
+    </tr>
+</table>

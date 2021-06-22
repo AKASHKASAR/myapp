@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Customer List</h2>
+
+            <ul class="list-unstyled list-group">
+                <li class="list-group-item list-group-item-primary" 
+                *ngFor="let cust of Customer">{{cust.id}}) {{cust.name}}</li>
+            </ul>
+        </div>
+    </div>
+</div>

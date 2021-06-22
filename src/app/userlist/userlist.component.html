@@ -1,0 +1,7 @@
+<h2>User List</h2>
+
+<ul>
+    <li *ngFor="let user of User |    paginate:{id: 'list-pagination',    itemsPerPage:10,    currentPage:page}">{{user.title}}</li>
+</ul>
+
+<pagination-controls id="list-pagination" (pageChange)="page=$event"></pagination-controls>

@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Customer Details</h2>
+
+            
+        <table class="table table-bordered table-primary">
+            <thead class="thead-dark">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>City</th>
+            </tr>
+        </thead>
+            <tr *ngFor="let cust of Customer">
+                <td>{{cust.id}}</td>
+                <td>{{cust.name}}</td>
+                <td>{{cust.gender}}</td>
+                <td>{{cust.city}}</td>
+            </tr>
+        </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+ [
+ {"id":1,"name":"John", "gender":"male","city":"Mumbai"},
+ {"id":2,"name": "Ravina", "gender": "Female","city":"Pune"},
+ {"id":3,"name": "Neha", "gender": "female","city": "Banglore"}, 
+ {"id":4,"name":"Smith", "gender":"male","city":"Pune"},
+ {"id":5,"name":"Megha", "gender": "Female","city":"Jaypur"}
+
+]

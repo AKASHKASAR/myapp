@@ -1,0 +1,22 @@
+<h2>User Details</h2>
+
+<table border="1">
+    <tr>
+        <th>User Id</th>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Completed</th>
+    </tr>
+    <tr *ngFor="let user of User | 
+    paginate:{id: 'list-pagination',
+    itemsPerPage:15,
+    currentPage:page}">
+        <td>{{user.userId}}</td>
+        <td>{{user.id}}</td>
+        <td>{{user.title}}</td>
+        <td>{{user.completed}}</td>
+    </tr>
+
+</table>
+
+<pagination-controls id="list-pagination" (pageChange)="page=$event"></pagination-controls>

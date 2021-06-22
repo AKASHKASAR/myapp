@@ -1,0 +1,22 @@
+<h2>Animation</h2>
+<h3>Enter- Leave animation</h3>
+<div class="fly" *ngIf="showDiv" [@flyInOut]>Fly In Out</div>
+
+<button type="button" (click)="toggleDiv()">Enter/Leave</button><br><br>
+
+
+<div class="room" [@lightOnOff]="roomState">
+
+</div><br>
+<button type="button" (click)="toggleLights()">Animation</button><br><br>
+
+<div class="heightBox" [@heightTrigger]="heightState">
+    <br><br><br><br><br><br><br>
+</div>
+
+<button type="button" (click)="toggleHeight()">Animation</button><br><br>
+
+<div class="room1" [@bgChange]="roomState1">
+
+</div><br>
+<button type="button" (click)="toggleBg()">Animation</button><br><br>

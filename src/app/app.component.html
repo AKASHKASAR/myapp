@@ -1,0 +1,90 @@
+<!-- <h1>Welcome to Angular</h1>
+<app-home [custProp]="parentData"></app-home>
+
+
+ custom property binding -data from parent to child
+custom event binding - child to parent -->
+
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1> Welcome to angular</h1>
+
+            <a routerLink="/template" routerLinkActive="active" class="btn btn-info mr-2 mb-3">Forms</a><br><br>
+            <a routerLink="/modernform1" routerLinkActive="active" class="btn btn-info mr-2 mb-3">Modern Form</a>
+            <a routerLink="/todo" routerLinkActive="active" class="btn btn-info mr-2 mb-3">Todo List</a>
+            <a routerLink="/custlist" routerLinkActive="active" class="btn btn-info mr-2 mb-3">Cust List</a>
+            <a routerLink="/custdetails" routerLinkActive="active" class="btn btn-info mr-2 mb-3">Cust Details</a>
+            <a routerLink="/department" routerLinkActive="active" class="btn btn-info mr-2 mb-3">Department </a>
+            <a routerLink="/userlist" routerLinkActive="active" class="btn btn-info mr-2 mb-3">User List</a>
+            <a routerLink="/userdetails" routerLinkActive="active" class="btn btn-info mr-2 mb-3">User Details</a>
+            <a routerLink="/animation" routerLinkActive="active" class="btn btn-info mr-2 mb-3">Animation</a>
+            <a routerLink="/material" routerLinkActive="active" class="btn btn-info mr-2 mb-3">Material</a>
+            <a routerLink="/material1" routerLinkActive="active" class="btn btn-info mr-2 mb-3">Material1</a>
+            
+            
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>
+
+<!-- <p> Hello Hello</p> 
+           Data binding 
+     1. String interpolation  
+            <p>{{title}}</p>
+            <p>{{title.length}}</p>
+            <p>{{title.toUpperCase}}</p>
+            <p>{{title.toLowerCase}}</p>
+            <p>{{num1+num2}}</p>
+            <p>{{title}}</p>
+            <p>{{msg()}}</p>
+            <p>{{color.shape}}</p>
+
+            <img src= "assets/images/a1.jpg" alt="Library">
+            <img src= "{{imgurl}}" alt="Library">
+
+            <input type="text" value="{{inptvalue}}" name ="faname">
+            <a href="{{url}}" title="Google">Google</a>
+
+             2.Property Binding 
+            
+            <img [src]="imgurl" alt="Library">
+            <img bind-src="imgurl" alt="Library">
+            
+            <input type="text" [value]="color.name" name="lname">
+            <input type="text" bind-value="inptvalue" name="lname">
+
+            <a href="url" [title] = "gtitle">Google</a>
+
+             3.Event Binding 
+
+            <button type="button" (click) = "display()" class="btn btn-primary mr-2">CLick</button>
+            <button type="button" (mouseover) = "sum(2,4)" class="btn btn-primary mr-2">SUm</button>
+            
+            4. 2 Way Data Binding 
+            <input type="text" name="fullname" [(ngModel)]="color.name">
+            <p>{{color.name}}</p> -->
+
+
+<!-- <h3>pipe transformation</h3>
+<p> {{title | uppercase}}</p>
+<p> {{title | lowercase}}</p>
+<p> {{title | slice:'4'}}</p>
+<p> {{title | slice:'11u'}}</p>
+<p> {{title | slice:'0':'10'}}</p>
+<p>{{num |number:'1.1-4'}}</p>
+<p>{{num |number:'2.10'}}</p>
+
+<h3>currency</h3>
+<p> {{num | currency:'EUR':false}}</p>
+<p> {{num | currency:'USD'}}</p>
+<p> {{num | currency:'GBP':true}}</p>
+<h3>date</h3>
+<p>{{d}}</p>
+<p>{{d | date:'fullDate'}}</p>
+<p>{{d | date:'mediumDate'}}</p>
+<p>{{d | date:'shortDate'}}</p> -->

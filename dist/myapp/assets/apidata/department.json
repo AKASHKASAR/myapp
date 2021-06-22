@@ -1,0 +1,9 @@
+[
+    {"id":1,"name":"Angular","version":11,"img":"assets/images/a1.png"},
+    {"id":2,"name":"Typescript","version":4,"img":"assets/images/a1.png"},
+    {"id":3,"name":"Bootstrap","version":4.6,"img":"assets/images/a1.png"},
+    {"id":4,"name":"Javascript","version":6,"img":"assets/images/a1.png"},
+    {"id":5,"name":"Jquery","version":3.5,"img":"assets/images/a1.png"},
+    {"id":6,"name":"Html","version":5,"img":"assets/images/a1.png"},
+    {"id":7,"name":"CSS","version":3,"img":"assets/images/a1.png"}
+]

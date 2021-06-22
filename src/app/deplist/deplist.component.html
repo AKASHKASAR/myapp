@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Department List</h2>
+
+            <!-- <ul class="list-unstyled list-group">
+                <li [class.selected]="isSelected(dep)" (click)="onSelect(dep)" class="list-group-item list-group-item-primary"
+                    *ngFor="let dep of department">{{dep.id}}) {{dep.name}}</li>
+            </ul> -->
+            <div class="row mt-3">
+                <div (click)="onSelect(dep)" class="col-md-3 text-center mb-4 dep" *ngFor="let dep of department">
+                    <img [src]="dep.img" alt="" width="100"><br>
+
+                    <span class="font-weight-bold">{{dep.name}}</span>
+                    <p class="text-success">{{selectedId}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

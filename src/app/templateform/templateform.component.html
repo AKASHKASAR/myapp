@@ -1,0 +1,142 @@
+<!--
+     Validation TDF
+     1.Control has been visited
+     class if true- ng-touched
+     class if false- ng-untouched
+    
+     2.Controls value has chnaged
+     class if true- ng-dirty
+     class if false- ng-pristine
+
+     3. Control value is valid
+     class if true- ng-valid
+     class if false- ng-invalid
+ -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Template Form</h2>
+            <form #userform="ngForm" (ngSubmit)="onSubmit(userform.value)">
+                <div class ="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" #nameRef value="" minlength="4" maxlength="10" class="form-control" name="fname" required ngModel>
+                    <!-- <p>{{nameRef.className}}</p> -->
+                </div> 
+                <!-- <div [hidden]="nameRef.valid || nameRef.pristine" class="alert alert-danger"> 
+                    Please Enter your name 
+                 </div> -->
+                <div *ngIf="nameRef.errors && (nameRef.dirty ||nameRef.touched)"class="alert alert-danger">
+
+                    <div [hidden]="!nameRef.errors.required">
+                        Please ENter your name
+                    </div>
+                    <div [hidden]="!nameRef.errors.minlength">
+                        Please ENter atleast 4 character
+                    </div>
+                </div>
+                <!-- <div ngModelGroup="address"> -->
+                  <!-- Email -->
+                <div class ="form-group">
+                    <label for="Email">Email:</label>
+                    <input type="email" id="email" #emailRef="ngModel" value=""
+                    pattern="[a-zA-Z0-9.-_]{2,}@[a-zA-Z,-]{2,}[.]{1}[a-zA-Z]{2,}"
+                     class="form-control" name="email" required ngModel>
+                </div>
+
+                <div *ngIf="emailRef.errors && (emailRef.dirty ||emailRef.touched)"
+                class="alert alert-danger">
+
+                    <div [hidden]="!emailRef.errors.required">
+                        Please Enter your Email ID
+                    </div>
+                    <div [hidden]="!emailRef.errors.pattern">
+                        Please Enter correct Email ID
+                    </div>
+                </div>
+                  
+                <!-- City -->
+                    <div class ="form-group">
+                        <label for="city">City:</label>
+                        <select name="city" class="form-control" #cityRef="ngModel"
+                        required ngModel>
+                        <option value="" selected disabled>Select City</option>
+                        <option [value]="c" *ngFor="let c of city">{{c}}</option>
+                        </select>
+                    </div>
+                                
+                    <div *ngIf="cityRef.errors && (cityRef.dirty ||cityRef.touched)"class="alert alert-danger">
+    
+                        <div [hidden]="!cityRef.errors.required">
+                            Select Your city
+                     </div>                    
+                    </div>
+                <!-- ZIp -->
+                     
+                <div class ="form-group">
+                    <label for="zip">ZIp:</label>
+                    <input type="text" id="zip" #zipRef="ngModel" value=""
+                    pattern="^[1-9][0-9]{5}"
+                     class="form-control" name="zip" required ngModel>
+                </div>
+                
+                <div *ngIf="zipRef.errors && (zipRef.dirty ||zipRef.touched)"
+                class="alert alert-danger">
+
+                    <div [hidden]="!zipRef.errors.required">
+                        Please Enter zip
+                    </div>
+                    <div [hidden]="!zipRef.errors.pattern">
+                        Please Enter 6 digit zip
+                    </div>
+                </div>
+
+                <div class ="form-group">
+                    <label for="street">Street:</label>
+                    <input type="text" id="street" class="form-control" name="street" required ngModel>
+                </div>
+                
+                <input type="submit" value="submit" [disabled]="!userform.form.valid" 
+                 class="btn btn-primary">
+            </form>
+            <!-- <table class="table table-bordered">
+                <tr>
+                    <th>Fullname</th>
+                    <th>emailid</th>
+                    <th>Street</th>
+                    <th>City</th>
+                </tr>
+
+                <tr>
+                    <td>{{fullname}}</td>
+                    <td>{{emailid}}</td>
+                    <td>{{street}}</td>
+                </tr>
+            </table> -->
+            <!-- <p>{{fullname}} {{emailid}} {{street}}</p> -->
+
+            <table class="table table-bordered">
+                <tr>
+                    <th>Fullname</th>
+                    <th>emailid</th>
+                    <th>Street</th>
+                    <th>CIty</th>
+                    <th>Delete</th>
+                    <th>Delete</th>
+                </tr>
+
+                <tr *ngFor="let i of info">
+                    <td>{{i.fname}}</td>
+                    <td>{{i.email}}</td>
+                    <td>{{i.street}}</td>
+                    <td>{{i.city}}</td>                    
+                    <td><button type="button" class="btn btn-danger"
+                        (click)="delete(i)">Delete</button></td>
+                    <td><button type="button" class="btn btn-danger"
+                        (click)="delete(i)">&times;</button></td>
+                        
+                </tr>
+            </table>
+            
+        </div>
+    </div>
+</div>
